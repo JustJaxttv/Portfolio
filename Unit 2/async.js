@@ -16,14 +16,15 @@ async function race() {
             resolve(true);
         }, 7000);
     });
+
+    race().then((result) => {
+        console.log("Loser:", result[2]);
+    });
+
+    return [
+        await runner1Go,
+        await runner2Go,
+        loser
+    ];
 }
 
-return Promise.all([runner1Go, runner2Go]).then(() => 
-    await runner1Go,
-    await runner2Go,
-    loser
-);
-
-race().then((result) => {
-    console.log("Loser:", result[2]);
-});
