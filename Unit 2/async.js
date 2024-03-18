@@ -7,18 +7,14 @@ async function race() {
         setTimeout(() => {
             loser = 'runner1';
             resolve(true);
-        }, 3000);
+        }, 1000);
     });
     
     let runner2Go = new Promise((resolve) => {
         setTimeout(() => {
             loser = 'runner2';
             resolve(true);
-        }, 7000);
-    });
-
-    race().then((result) => {
-        console.log("Loser:", result[2]);
+        }, 3000);
     });
 
     return [
@@ -27,4 +23,8 @@ async function race() {
         loser
     ];
 }
+
+race().then((result) => {
+    console.log("Loser:", result[2]);
+});
 
