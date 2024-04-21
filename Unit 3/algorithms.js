@@ -19,17 +19,20 @@ head.left.right.right = new Leaf(8);
 head.right.right.left = new Leaf(16);
 head.right.right.right = new Leaf(20);
 
-let depth = [];
-let breadth = [];
-
-function depthFirstSearch(node = head) {
-    if (node === null) return;
-    depth.push(node.value);
-    depthFirstSearch(node.left);
-    depthFirstSearch(node.right);
+function depthFirstSearch() {
+    let depth = [];
+    function dfs(node = head) {
+        if (node === null) return;
+        depth.push(node.value);
+        dfs(node.left);
+        dfs(node.right);
+    }
+    dfs();
+    displayResults(depth, "depthOutput");
 }
 
 function breadthFirstSearch() {
+    let breadth = [];
     let queue = [head];
     while (queue.length > 0) {
         let current = queue.shift();
@@ -37,13 +40,10 @@ function breadthFirstSearch() {
         if (current.left !== null) queue.push(current.left);
         if (current.right !== null) queue.push(current.right);
     }
+    displayResults(breadth, "breadthOutput");
 }
 
-function displayResults(array) {
-    document.getElementById("output").innerText = array.join(" -> ");
+function displayResults(array, outputId) {
+    document.getElementById(outputId).innerText = array.join(" -> ");
 }
 
-depthFirstSearch();
-displayResults(depth);
-breadthFirstSearch();
-displayResults(breadth);
