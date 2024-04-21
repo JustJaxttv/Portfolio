@@ -42,3 +42,8 @@ function breadthFirstSearch() {
 function displayResults(array) {
     document.getElementById("output").innerText = array.join(" -> ");
 }
+
+depthFirstSearch();
+displayResults(depth);
+breadthFirstSearch();
+displayResults(breadth);
