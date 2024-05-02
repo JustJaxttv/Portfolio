@@ -48,12 +48,12 @@ function calculateSquare() {
         let current = this.head;
         let listString = "";
         while (current) {
-          listString += current.data + " -> ";
-          current = current.next;
+            listString += current.data + " -> ";
+            current = current.next;
         }
         listString += "null";
         document.getElementById("listDisplay").innerText = listString;
-      }
+     }
     }
 
     let linkedList = new LinkedList();
