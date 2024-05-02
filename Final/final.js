@@ -73,11 +73,37 @@ function calculateSquare() {
           let searchResult = linkedList.search(searchValue);
           let resultParagraph = document.getElementById("searchResult");
           if (searchResult) {
-            resultParagraph.innerText = `Value ${searchValue} found in the list.`;
+            resultParagraph.innerText = "Value " + searchValue + " found in the list.";
           } else {
-            resultParagraph.innerText = `Value ${searchValue} not found in the list.`;
+            resultParagraph.innerText = "Value " + searchValue + " not found in the list.";
           }
         } else {
           alert("Please enter a valid value to search.");
         }
       }
+
+      const factorial = (num) => {
+        if (num < 0) 
+        return "Invalid input";
+        if (num === 0 || num === 1) 
+        return 1;
+        let result = 1;
+        for (let i = 2; i <= num; i++) {
+          result *= i;
+        }
+        return result;
+      };
+
+      const displayOutput = (result) => {
+        document.getElementById("output").innerText = `The factorial is: ${result}`;
+      };
+
+      const calculateFactorial = () => {
+        const inputNumber = parseInt(document.getElementById("numberInput").value);
+        if (!isNaN(inputNumber)) {
+          const result = factorial(inputNumber);
+          displayOutput(result);
+        } else {
+          displayOutput("Please enter a valid number.");
+        }
+      };
