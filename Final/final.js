@@ -3,7 +3,7 @@ function calculateSquare() {
 
     var square = inputNumber * inputNumber;
 
-    var outputDiv = document.getElementById("output");
+    var outputDiv = document.getElementById("squareOutput");
     outputDiv.innerHTML = "The square of " + inputNumber + " is " + square;
   }
 
@@ -95,7 +95,7 @@ function calculateSquare() {
       };
 
       const displayOutput = (result) => {
-        document.getElementById("output").innerText = `The factorial is: ${result}`;
+        document.getElementById("factorialOutput").innerText = `The factorial is: ${result}`;
       };
 
       const calculateFactorial = () => {
