@@ -59,21 +59,23 @@ function calculateSquare() {
     let linkedList = new LinkedList();
 
     function insertNode() {
-      let insertValue = document.getElementById("insertValue").value;
-      if (insertValue.trim() !== "") {
-        linkedList.insert(insertValue);
-      } else {
-        alert("Please enter a valid value to insert.");
+        let insertValue = document.getElementById("insertValue").value;
+        if (insertValue.trim() !== "") {
+          linkedList.insert(insertValue);
+        } else {
+          alert("Please enter a valid value to insert.");
+        }
       }
-    }
 
     function searchNode() {
         let searchValue = document.getElementById("searchValue").value;
         if (searchValue.trim() !== "") {
-          if (linkedList.search(searchValue)) {
-            alert("Value " + searchValue + " found in the list.");
+          let searchResult = linkedList.search(searchValue);
+          let resultParagraph = document.getElementById("searchResult");
+          if (searchResult) {
+            resultParagraph.innerText = `Value ${searchValue} found in the list.`;
           } else {
-            alert("Value " + searchValue + " not found in the list.");
+            resultParagraph.innerText = `Value ${searchValue} not found in the list.`;
           }
         } else {
           alert("Please enter a valid value to search.");
