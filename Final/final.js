@@ -104,6 +104,6 @@ function calculateSquare() {
           const result = factorial(inputNumber);
           displayOutput(result);
         } else {
-          displayOutput("Please enter a valid number.");
+          Alert("Please enter a valid number.");
         }
       };
