@@ -28,7 +28,7 @@ class GuessingGame {
 game = new GuessingGame(1, 10);
 
 const guessButton = document.getElementById('guessButton');
-const resultDisplay = document.getElementById('resultDisplay');
+const resultDisyplay = document.getElementById('resultDisplay');
 
 guessButton.addEventListener('click', function() {
     const guessInput = document.getElementById('guessInput');
